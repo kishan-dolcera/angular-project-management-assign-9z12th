@@ -7,20 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Project Management';
+  submitted = false;
 
   model = {ProjectName:"",CustomerName:"",Location:""};
   headers = ["ProjectName", "CustomerName", "Location"];
   rows =         [
-                   {ProjectName:" ",CustomerName:" ",Location:" "}
+                   {ProjectName:"Amazing Petcare ",CustomerName:"Peter ",Location:"South Africa "},
+                   {ProjectName:"Share the world ",CustomerName:"Clever ",Location:"California "}
                    ];
   deleteRow(x){
-  var delBtn = confirm(" Do you want to delete ?");
-  if ( delBtn == true ) {
-    this.rows.splice(x, 1 );
-  }   
+   this.rows.splice(x, 1 );  
 }
   
   onUpdate(formObj) {
+    this.submitted = true;
     let values = formObj.value;
     console.log(values);
     let obj: any = {
@@ -33,13 +33,13 @@ export class AppComponent  {
     formObj.reset();
 
   }
-
+  onReset() {
+    this.submitted = false;
+    }
   constructor() { }
 
   ngOnInit() {
   }
- trackById(index: number, data: any): string {
-    return data.code;
-}
+ 
 
 }

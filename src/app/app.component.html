@@ -4,13 +4,15 @@
 <table *ngIf="rows.length!=0" class="table table-bordered">
   <thead>
     <tr>
+      <th>Serial No.</th>
 <th *ngFor = "let column of headers">
       {{column}}
 </th>
 <th>Action</th>
     </tr>
 </thead>
-<tr *ngFor = "let row of rows">
+<tr *ngFor = "let row of rows let i= index">
+  <td >{{i+1}}</td>
     <td *ngFor = "let column of headers">
       {{row[column]}}
     </td>
@@ -40,7 +42,7 @@
     
 
       <button id="submitB" type="submit" class="btn btn-success">Submit</button>
-      <button id="cancelB" type="cancel" class="btn btn-success">Cancel</button>
+      <button id="cancelB" class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
     </form>
      
     <br>
