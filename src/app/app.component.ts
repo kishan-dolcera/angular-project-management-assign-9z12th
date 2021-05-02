@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent  {
   name = 'Project Management';
   submitted = false;
+  add=false;
 
   model = {ProjectName:"",CustomerName:"",Location:""};
   headers = ["ProjectName", "CustomerName", "Location"];
@@ -18,7 +19,7 @@ export class AppComponent  {
   deleteRow(x){
    this.rows.splice(x, 1 );  
 }
-  
+
   onUpdate(formObj) {
     this.submitted = true;
     let values = formObj.value;
@@ -31,11 +32,17 @@ export class AppComponent  {
 
     this.rows.push(obj);
     formObj.reset();
+    this.add=false;
 
   }
   onReset() {
     this.submitted = false;
+    this.add= false
     }
+
+  open(){
+    this.add =true;
+  }
   constructor() { }
 
   ngOnInit() {
