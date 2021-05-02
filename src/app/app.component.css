@@ -61,6 +61,7 @@ input {
   border-radius: 50%;
   width: 50px;
   height: 30px;
+  margin-left: 10% ;
 }
 #Pname{
   background-color: rgb(122, 184, 241);
