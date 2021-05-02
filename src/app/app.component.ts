@@ -13,6 +13,12 @@ export class AppComponent  {
   rows =         [
                    {ProjectName:" ",CustomerName:" ",Location:" "}
                    ];
+  deleteRow(x){
+  var delBtn = confirm(" Do you want to delete ?");
+  if ( delBtn == true ) {
+    this.rows.splice(x, 1 );
+  }   
+}
   
   onUpdate(formObj) {
     let values = formObj.value;
@@ -27,6 +33,7 @@ export class AppComponent  {
     formObj.reset();
 
   }
+
   constructor() { }
 
   ngOnInit() {

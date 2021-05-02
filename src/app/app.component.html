@@ -7,12 +7,14 @@
 <th *ngFor = "let column of headers">
       {{column}}
 </th>
+<th>Action</th>
     </tr>
 </thead>
 <tr *ngFor = "let row of rows">
     <td *ngFor = "let column of headers">
       {{row[column]}}
     </td>
+    <td> <button (click) = "deleteRow(i)">Delete<i class="fa fa-trash"></i></button></td>
 </tr>
 </table>
 </div>
