@@ -1,0 +1,56 @@
+.heading{
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.heading2{
+  color: red;
+  text-align: center;
+}
+
+.table, th ,tr{
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+}
+
+.container{
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+
+.labels{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-weight: bold;
+  width: 120px;
+ 
+  line-height: 26px;
+  margin-bottom: 10px
+  
+}
+#submitB{
+  background-color: green;
+  width: 100px;
+  height: 35px;
+}
+
+#cancelB{
+  background-color: grey;
+  margin-left: 20%;
+  margin-top: 5%;
+  width: 100px;
+  height: 35px;
+}
+
+div{
+  text-align: center;
+}
+input {
+  height: 20px;
+  flex: 0 0 200px;
+  margin-left: 10px;
+}
