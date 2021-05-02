@@ -16,7 +16,7 @@
     <td *ngFor = "let column of headers">
       {{row[column]}}
     </td>
-    <td> <button class="btn btn-success" (click)="Edit()" >Edit<i class="fa fa-trash"></i></button>||<button (click) = "deleteRow(i)">Delete<i class="fa fa-trash"></i></button></td>
+    <td> <button class="btn btn-success" (click)="onEdit(i)" >Edit<i class="fa fa-trash"></i></button>||<button (click) = "deleteRow(i)">Delete<i class="fa fa-trash"></i></button></td>
 </tr>
 </table>
 <p *ngIf="rows.length==0">You do not have any project. Create your first project by clicking the plus button below</p>

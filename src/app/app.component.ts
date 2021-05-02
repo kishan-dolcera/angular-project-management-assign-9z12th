@@ -9,6 +9,8 @@ export class AppComponent  {
   name = 'Project Management';
   submitted = false;
   add=false;
+  isEdit = false;
+  selectedIndex = null;
 
   model = {ProjectName:"",CustomerName:"",Location:""};
   headers = ["ProjectName", "CustomerName", "Location"];
@@ -20,7 +22,19 @@ export class AppComponent  {
    this.rows.splice(x, 1 );  
 }
 
+onEdit(index) {
+    this.selectedIndex = index;
+    let data = this.rows[index];
+    console.log(data);
+    this.model.ProjectName = data.ProjectName;
+    this.model.CustomerName = data.CustomerName;
+    this.model.Location = data.Location;
+    this.add = true;
+    this.isEdit = true;
+  }
+
   onUpdate(formObj) {
+    if (!this.isEdit){
     this.submitted = true;
     let values = formObj.value;
     console.log(values);
@@ -33,6 +47,12 @@ export class AppComponent  {
     this.rows.push(obj);
     formObj.reset();
     this.add=false;
+    }else{
+      this.rows.splice(this.selectedIndex, 1, { ...formObj.value });
+      this.selectedIndex = null;
+      this.isEdit = false;
+      this.add = false;
+    }
 
   }
   onReset() {
