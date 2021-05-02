@@ -1,7 +1,7 @@
 <h1 class="heading">{{name}}</h1>
 <h2 class="heading2">Project Details</h2>
 <div>
-<table class="table table-bordered">
+<table *ngIf="rows.length!=0" class="table table-bordered">
   <thead>
     <tr>
 <th *ngFor = "let column of headers">
@@ -17,6 +17,7 @@
     <td> <button (click) = "deleteRow(i)">Delete<i class="fa fa-trash"></i></button></td>
 </tr>
 </table>
+<p *ngIf="rows.length==0">You do not have any project. Create your first project by clicking the plus button below</p>
 </div>
 <h2 class="heading2">Add New Project</h2>
   <div class="container">
